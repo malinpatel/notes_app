@@ -5,7 +5,7 @@
 
     var output = ["<ul>"];
     displayNotes(list).forEach (function (note) {
-      output.push("<li><div>"+note.text+"</div></li>");
+      output.push("<li><div>"+note.text.substring(0,20)+"</div></li>");
     });
     output.push("</ul>");
     console.log(output.join(""));
