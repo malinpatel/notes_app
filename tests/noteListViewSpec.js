@@ -15,7 +15,7 @@ var view = new View(new List());
   view.list.notes[0] = new Note("I like beer");
   view.list.notes[1] = new Note("I like pizza");
   console.log(htmlList(view.list));
-  if(htmlList(view.list) !== '<ul><li><div id="0">I like beer</div></li><li><div id="1">I like pizza</div></li></ul>') {
+  if(htmlList(view.list) !== '<ul><li><div id="0"><a href=#0>'+'I like beer</a></div></li><li><div id="1"><a href=#1>I like pizza</a></div></li></ul>') {
     throw new Error("Returned incorrect string");
 
   }
@@ -27,7 +27,7 @@ var view = new View(new List());
 (function returnsFirstTwentyCharacters () {
   view.list.notes = [];
   view.list.notes[0] = new Note("Hello I am only twenty characters long");
-  if(htmlList(view.list) !== '<ul><li><div id="0">Hello I am only twen</div></li></ul>') {
+  if(htmlList(view.list) !== '<ul><li><div id="0"><a href=#0>'+'Hello I am only twen</a>'+'</div></li></ul>') {
     throw new Error("String is too long");
   }
   else {
