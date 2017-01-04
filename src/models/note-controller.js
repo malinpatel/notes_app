@@ -1,8 +1,4 @@
-var NoteController = function (list) {
-  this.view = new View(list);
-};
-
-
+var NoteController = function() {};
 function changeDiv () {
   var elem = document.getElementById('app');
   elem.innerHTML = 'howdy';
