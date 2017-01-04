@@ -16,9 +16,7 @@ testListingAllNotes("This is a note on Tuesday");
 
 function testNoNotesDisplayed() {
   var listHTML = new ListHTML({ list: [] });
-  if (listHTML.view() !== "<ul></ul>"){
-    throw new Error("No empty list")
-  }
+  assert.isTrue(listHTML.view() === "<ul></ul>")
 };
 
 testNoNotesDisplayed();
@@ -26,9 +24,7 @@ testNoNotesDisplayed();
 function testOneNoteDisplayed() {
   var noteList = { list: [{ text: "This is a note on Tuesday" }]};
   var listHTML = new ListHTML(noteList);
-  if (listHTML.view() !== "<ul><li>This is a note on Tuesday</li></ul>"){
-    throw new Error("No items in list")
-  }
+  assert.isTrue(listHTML.view() === "<ul><li>This is a note on Tuesday</li></ul>")
 };
 
 testOneNoteDisplayed();
@@ -36,9 +32,7 @@ testOneNoteDisplayed();
 function testMultipleNotesDisplayed(){
   var noteList = { list: [{text: "This is a note"}, {text: "Another note"}]};
   var listHTML = new ListHTML(noteList);
-  if (listHTML.view() !== "<ul><li>This is a note</li><li>Another note</li></ul>"){
-    throw new Error("No items in list")
-  }
+  assert.isTrue(listHTML.view() === "<ul><li>This is a note</li><li>Another note</li></ul>")
 };
 
 testMultipleNotesDisplayed();
