@@ -36,3 +36,14 @@ function testMultipleNotesDisplayed(){
 };
 
 testMultipleNotesDisplayed();
+
+function testCreatingNoteList() {
+  var note = { text: "Favourite drink: seltzer" }
+  var noteController = new NoteController();
+  noteController.addNewNote(note)
+  if (noteController.noteList.list[0].text !== "Favourite drink: seltzer") {
+    throw new Error("Does not contain note list")
+  }
+};
+
+testCreatingNoteList();

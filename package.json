@@ -1,0 +1,22 @@
+{
+  "name": "notes_app",
+  "version": "1.0.0",
+  "description": "## Notes app",
+  "main": "helper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejatkin/JS_notesApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejatkin/JS_notesApp/issues"
+  },
+  "homepage": "https://github.com/ejatkin/JS_notesApp#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
