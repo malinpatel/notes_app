@@ -1,23 +1,23 @@
 function doubleNote(){
-  this.text = "Favourite food: pesto"
-};
+  this.text = "Favourite food: pesto";
+}
 var doubleNote = new doubleNote();
 
 function doubleList(note){
   this.notes = [note];
-};
+}
 
 var doubleList = new doubleList(doubleNote);
 
 function doubleView(list) {
   this.list = list;
-};
+}
 
 var doubleView = new doubleView(doubleList);
 
 function doubleController(view){
   this.view = view;
-};
+}
 
 var doubleController = new doubleController(doubleView);
 
