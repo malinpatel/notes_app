@@ -47,3 +47,22 @@ function testCreatingNoteList() {
 };
 
 testCreatingNoteList();
+
+function testNoteIsAddedToList() {
+  var noteController = new NoteController();
+  noteController.addNewNote();
+  assert.isTrue(noteController.noteList.list.length === 1)
+};
+
+testNoteIsAddedToList();
+
+function testDisplayNoteList() {
+  var noteController = new NoteController();
+  noteController.addNewNote()
+  noteController.displayNotes()
+  if(noteController.listHTML.view() !== "<ul><li>Favourite drink: seltzer</li></ul>") {
+    throw new Error("No list created")
+  }
+};
+
+testDisplayNoteList();
