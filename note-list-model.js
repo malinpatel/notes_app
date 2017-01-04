@@ -1,12 +1,12 @@
 (function(exports) {
-  var noteList = function() {
+  function NoteList() {
     this.list = [];
-    noteList.prototype.listNoteItems = function() {
+    NoteList.prototype.listNoteItems = function() {
       return this.list;
     };
-    noteList.prototype.addNoteToList = function(text) {
-      this.list.push(text)
+    NoteList.prototype.addNoteToList = function(note) {
+      this.list.push(note)
     };
   };
-  exports.noteList = noteList;
+  exports.NoteList = NoteList;
 })(this);

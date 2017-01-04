@@ -6,10 +6,19 @@ function testAddingNewNote() {
 testAddingNewNote("Text");
 
 function testListingAllNotes() {
-  var note = new Note("This is a note on Tuesday");
-  var items = new noteList();
+  var note = { text: "This is a note on Tuesday" }
+  var items = new NoteList();
   items.addNoteToList(note);
   assert.isTrue(items.list[0] === note);
 };
 
 testListingAllNotes("This is a note on Tuesday");
+
+function testNoNotesDisplayed() {
+  var listHTML = new ListHTML({ list: [] });
+  if (listHTML.view() !== "<ul></ul>"){
+    throw new Error("No empty list")
+  }
+};
+
+testNoNotesDisplayed();
