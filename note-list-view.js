@@ -9,5 +9,6 @@
     string += "<li>" + this.noteList.list[i].text + "</li>"
     return string + "</ul>"
   };
+  
   exports.ListHTML = ListHTML;
 })(this);
