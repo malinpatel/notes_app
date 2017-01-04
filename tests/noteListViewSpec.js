@@ -14,8 +14,8 @@ var view = new View(new List());
   view.list.notes = [];
   view.list.notes[0] = new Note("I like beer");
   view.list.notes[1] = new Note("I like pizza");
-
-  if(htmlList(view.list) !== "<ul><li><div>I like beer</div></li><li><div>I like pizza</div></li></ul>") {
+  console.log(htmlList(view.list));
+  if(htmlList(view.list) !== '<ul><li><div id="0">I like beer</div></li><li><div id="1">I like pizza</div></li></ul>') {
     throw new Error("Returned incorrect string");
 
   }
@@ -26,8 +26,8 @@ var view = new View(new List());
 
 (function returnsFirstTwentyCharacters () {
   view.list.notes = [];
-  view.list.notes[0] = new Note("Hello I'm only twenty characters long");
-  if(htmlList(view.list) !== "<ul><li><div>Hello I'm only twent</div></li></ul>") {
+  view.list.notes[0] = new Note("Hello I am only twenty characters long");
+  if(htmlList(view.list) !== '<ul><li><div id="0">Hello I am only twen</div></li></ul>') {
     throw new Error("String is too long");
   }
   else {
@@ -44,4 +44,16 @@ var view = new View(new List());
     else {
       console.log("handlesAnyNumberOfNotes  passed");
     }
+})();
+
+(function testsElementId () {
+  view.list.notes = [];
+  view.list.notes[0] = new Note("Hello I am only twenty characters long");
+  htmlList(view.list);
+  if (document.getElementById('0') === null) {
+    throw new Error("Element doesn't have the proper id");
+  }
+  else {
+    console.log("testsElementId passed");
+  }
 })();
