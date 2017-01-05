@@ -19,7 +19,7 @@
 (function testOneNoteDisplayed() {
   var noteList = { list: [{ text: "This is a note on Tuesday" }]};
   var listHTML = new ListHTML(noteList);
-  assert.isTrue(listHTML.view() === "<ul><li>This is a note on Tuesday</li></ul>")
+  assert.isTrue(listHTML.view() === "<ul><li>This is a note on Tu</li></ul>")
 })();
 
 
@@ -48,11 +48,18 @@
   var noteController = new NoteController();
   noteController.addNewNote()
   noteController.displayNotes()
-  assert.isTrue(noteController.listHTML.view() === "<ul><li>Favourite drink: seltzer</li></ul>")
+  assert.isTrue(noteController.listHTML.view() === "<ul><li>Favourite drink: sel</li></ul>")
 })();
 
 (function testsinglenoteview() {
   var note = { text: "Favourite drink: seltzer" }
   var singleNote = new SingleNote(note);
   assert.isTrue(singleNote.displayNote() === "<div>Favourite drink: seltzer</div>")
+})();
+
+
+(function testShowsOnlyTwentyCharacters() {
+  var noteList = { list: [{ text: "Favourite drink: seltzer" }]};
+  var listHTML = new ListHTML(noteList);
+  assert.isTrue(listHTML.view() === "<ul><li>Favourite drink: sel</li></ul>")
 })();
